@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSignup"
+        style="@style/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/sign_up" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSignup"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/reactangle_circle_style"
+        android:layout_marginBottom="10dp"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <TextView
+                android:id="@+id/tvSetUpRates"
+                style="@style/setup_your"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/setup_rates" />
+
+            <TextView
+                android:id="@+id/tvHowWould"
+                style="@style/how_would_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSetUpRates"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/how_would_you_charge" />
+
+            <TextView
+                android:id="@+id/tvSelectAll"
+                style="@style/select_al"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvHowWould"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/select_all" />
+
+            <TextView
+                android:id="@+id/tvMonthly"
+                style="@style/at_my_home"
+                android:layout_width="225dp"
+                android:layout_height="73dp"
+                android:layout_below="@+id/tvSelectAll"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/reactangle_cert"
+                android:gravity="left|center"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:paddingEnd="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/monthly"
+                android:textColor="@color/textColorBlack" />
+
+            <TextView
+                android:id="@+id/tvWeekly"
+                style="@style/at_my_home"
+                android:layout_width="225dp"
+                android:layout_height="73dp"
+                android:layout_below="@+id/tvMonthly"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reactangle_cert"
+                android:gravity="left|center"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:paddingEnd="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/weekly"
+                android:textColor="@color/textColorBlack" />
+
+            <TextView
+                android:id="@+id/tvAsPerClass"
+                style="@style/at_my_home"
+                android:layout_width="225dp"
+                android:layout_height="73dp"
+                android:layout_below="@+id/tvWeekly"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reactangle_cert"
+                android:gravity="left|center"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:paddingEnd="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/per_class"
+                android:textColor="@color/textColorBlack" />
+
+            <LinearLayout
+                android:id="@+id/LLCharges"
+                android:layout_width="270dp"
+                android:layout_height="99dp"
+                android:layout_below="@+id/tvAsPerClass"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvChargeDoubt"
+                    style="@style/how_would_"
+                    android:layout_width="237dp"
+                    android:layout_height="99dp"
+                    android:gravity="center"
+                    android:text="@string/how_would_charge"
+                    android:textColor="@color/textColorBlack" />
+
+
+                <ImageView
+                    android:id="@+id/information"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="20dp"
+                    android:background="@mipmap/question_mark" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="195dp"
+                android:id="@+id/bundleInformation"
+                android:layout_above="@+id/LLCharges"
+                android:layout_marginBottom="-42dp"
+
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/hintText"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginRight="26dp"
+                    android:background="#000"
+                    android:padding="10dp"
+                    android:text="@string/doubt"
+                    android:textColor="#ffff" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tvChapterWise"
+                style="@style/at_my_home"
+                android:layout_width="225dp"
+                android:layout_height="73dp"
+                android:layout_below="@+id/LLCharges"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reactangle_cert"
+                android:gravity="left|center"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:paddingEnd="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/chapter_wise"
+                android:textColor="@color/textColorBlack" />
+
+            <TextView
+                android:id="@+id/tvConceptWise"
+                style="@style/at_my_home"
+                android:layout_width="225dp"
+                android:layout_height="73dp"
+                android:layout_below="@+id/tvChapterWise"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reactangle_cert"
+                android:gravity="left|center"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:paddingEnd="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/concept_wise"
+                android:textColor="@color/textColorBlack" />
+
+            <Button
+                android:id="@+id/btnNext"
+                style="@style/next"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tvConceptWise"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/reactangle_circle_style"
+                android:text="@string/next"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

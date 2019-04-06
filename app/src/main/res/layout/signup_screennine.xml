@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSignup"
+        style="@style/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/sign_up"
+        />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSignup"
+        android:layout_margin="10dp"
+        android:background="@drawable/reactangle_circle_style"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp">
+
+            <TextView
+                android:id="@+id/tvWriteReview"
+                style="@style/where_will"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/conduct_classes"
+               />
+
+            <TextView
+                android:id="@+id/tvHome"
+                style="@style/at_my_home"
+                android:layout_width="311dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/tvWriteReview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/reactangle_cert"
+                android:gravity="center|right"
+                android:paddingEnd="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/at_home" />
+
+            <TextView
+                android:id="@+id/tvStudentHome"
+                style="@style/at_my_home"
+                android:layout_width="311dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/tvHome"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/reactangle_cert"
+                android:gravity="center|right"
+                android:paddingEnd="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/at_student_home" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tvStudentHome"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/reactangle_circle_style"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

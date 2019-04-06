@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginForteacher">
+    <TextView
+        android:id="@+id/testApp"
+        style="@style/test_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/test_app"
+        />
+    <TextView
+        android:id="@+id/login"
+        style="@style/test_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:textColor="#000"
+        android:layout_below="@+id/testApp"
+        android:text="@string/login"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/login"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/reactangle_circle_style">
+
+
+        <TextView
+            android:id="@+id/tvNoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/code"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="102dp"
+            android:layout_marginRight="25dp"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorBlack"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:id="@+id/edtNumber"
+            fontPath="fonts/Montserrat-Light.otf"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="@string/enter_number"
+            android:inputType="number"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginRight="25dp"
+            android:maxLength="10"
+            android:padding="10dp"
+            android:textColor="@color/textColorBlack"
+            android:textColorHint="@color/colorGrayDark"
+            android:textSize="20sp"
+            tools:ignore="Autofill,MissingPrefix" />
+
+
+        <EditText
+            android:id="@+id/passwordForLogin"
+            fontPath="fonts/Montserrat-Light.otf"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/tvNoText"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="25dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColor="@color/textColorBlack"
+            android:textColorHint="@color/colorGrayDark"
+            android:textSize="20sp"
+            tools:ignore="Autofill,MissingPrefix" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            style="@style/login"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_above="@+id/btnSignup"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="65dp"
+            android:layout_below="@+id/passwordForLogin"
+            android:layout_marginTop="26dp"
+            android:layout_marginRight="65dp"
+            android:background="@drawable/reactangle_style"
+            android:text="@string/login" />
+    </RelativeLayout>
+
+</RelativeLayout>

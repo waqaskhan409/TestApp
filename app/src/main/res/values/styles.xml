@@ -1,0 +1,239 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Text style for "signup" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="signup">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">29sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Text style for "teacher" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="teacher">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Text style for "test_app" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="test_app">
+        <item name="android:textColor">#ff707070</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Text style for "login" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="login">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">29sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Text style for "select_you" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="select_you">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- Text style for "select_any" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="select_any">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- Text style for "academics." -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="academics">
+        <item name="android:textColor">#ccffffff</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- Text style for "hobby." -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="hobby">
+        <item name="android:textColor">#ccffffff</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- Text style for "academics" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="academics2">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Text style for "select_the" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="select_the_class">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- Text style for "class_1._" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="class_text">
+        <item name="android:textColor">#ccffffff</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Text style for "next" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="next">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="personal_v">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="upload_you">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="upload_a_p">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="upload_you_cert">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="identity_p">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="any_one_of">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="driving_li">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="whats_you">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="university">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="specialisation">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="qualificat">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="select_you_exp">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="select_you_exp_">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="starting_o">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="one_three_years_e">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="how_many_h">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="more_than_">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="write_your">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="_highlight">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="where_will">
+        <item name="android:textColor">#ff707070</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="at_my_home">
+        <item name="android:textColor">#ff707070</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="setup_your">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:textSize">27sp</item>
+    </style>
+
+    <style name="how_would_">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="select_al">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="adding_a_d">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

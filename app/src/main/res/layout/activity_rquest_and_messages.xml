@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.RquestAndMessages">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOME"
+        android:id="@+id/homeTeacher"
+        android:textFontWeight="10sp"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/messageAndRequest"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/homeTeacher"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/request"
+            style="@style/academics2"
+            android:layout_width="129dp"
+            android:layout_height="38dp"
+            android:layout_below="@+id/tvSignup"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/reactangle_circle_style"
+            android:gravity="center"
+            android:text="@string/request"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:src="@mipmap/line_10xhdpi" />
+        <TextView
+            android:id="@+id/message"
+            style="@style/academics2"
+            android:layout_width="129dp"
+            android:layout_height="38dp"
+            android:layout_below="@+id/tvSignup"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/message"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_below="@+id/messageAndRequest"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</RelativeLayout>

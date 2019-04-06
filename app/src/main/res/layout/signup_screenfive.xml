@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSignup"
+        style="@style/signup"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/sign_up"
+       />
+
+    <TextView
+        android:id="@+id/tvAcademics"
+        style="@style/academics2"
+        android:layout_width="189dp"
+        android:textStyle="bold"
+        android:paddingTop="5dp"
+
+        android:paddingBottom="5dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSignup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/reactangle_circle_style"
+        android:gravity="center"
+        android:text="@string/academicss"
+       />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/reactangle_circle_style"
+        android:layout_below="@+id/tvAcademics"
+        android:layout_marginTop="30dp"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginEnd="15dp"
+
+            android:layout_marginRight="15dp"
+            >
+
+            <TextView
+                android:id="@+id/tvSelectText"
+                style="@style/select_the_class"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"
+                android:text="@string/select_subject"
+                android:textAllCaps="false"
+                />
+
+            <LinearLayout
+                android:id="@+id/llNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSelectText"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/LLScience"
+                            android:layout_width="143dp"
+                            android:layout_height="131dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/black_bg_drawable"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@mipmap/icons8_microscope_50pxxxhdpi"
+                                android:contentDescription="@string/app_name" />
+
+                            <TextView
+                                style="@style/class_text"
+                                android:layout_width="wrap_content"
+                                android:textColor="#ccffffff"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="7dp"
+                                android:textSize="23sp"
+                                android:text="@string/science" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivScience"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/ic_check_circle_green_24dp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/LLEnglish"
+                            android:layout_width="143dp"
+                            android:layout_height="131dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/light_purple_bg_drawable"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginLeft="10dp"
+
+                                android:background="@mipmap/icons8_noun_50pxxxhdpi"
+                                android:contentDescription="@string/app_name" />
+
+                            <TextView
+                                style="@style/class_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:textColor="#ccffffff"
+                                android:textSize="23sp"
+                                android:layout_marginLeft="10dp"
+                                android:text="@string/english" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivEnglish"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/ic_check_circle_green_24dp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/LLMaths"
+                            android:layout_width="143dp"
+                            android:layout_height="131dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/dark_blue_bg_drawable"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@mipmap/icons8_geometry_50pxxxhdpi"
+                                android:contentDescription="@string/app_name" />
+
+                            <TextView
+                                style="@style/class_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="7dp"
+                                android:textSize="21sp"
+                                android:textColor="#ccffffff"
+                                android:text="@string/maths" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivMaths"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/ic_check_circle_green_24dp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/LLSocialStudies"
+                            android:layout_width="143dp"
+                            android:layout_height="131dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/dark_sky_blue_bg_drawable"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@mipmap/icons8_strike_48pxxxhdpi"
+                                android:contentDescription="@string/app_name" />
+
+                            <TextView
+                                style="@style/class_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:layout_marginLeft="7dp"
+                                android:textColor="#ccffffff"
+                                android:layout_marginTop="10dp"
+                                android:textSize="19sp"
+                                android:text="@string/social" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivSocialStudies"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/ic_check_circle_green_24dp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/LLLanguages"
+                            android:layout_width="143dp"
+                            android:layout_height="131dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/color_seven_bg"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@mipmap/icons8_language_48pxxhdpi"
+                                android:contentDescription="@string/app_name" />
+
+                            <TextView
+                                style="@style/class_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="7dp"
+                                android:textSize="19sp"
+                                android:textColor="#ccffffff"
+                                android:text="@string/languages" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivLanguages"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/ic_check_circle_green_24dp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/LLComputerScience"
+                            android:layout_width="143dp"
+                            android:layout_height="131dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/color_eight_bg"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_margin="10dp"
+                                android:background="@mipmap/icons8_informatics_50pxxhdpi"
+                                android:contentDescription="@string/app_name" />
+
+                            <TextView
+                                style="@style/class_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:layout_marginLeft="7dp"
+                                android:textColor="#ccffffff"
+                                android:textSize="19sp"
+                                android:layout_marginBottom="7dp"
+                                android:text="@string/computer" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivComputerScience"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/ic_check_circle_green_24dp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btnNext"
+                    style="@style/next"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/reactangle_circle_style"
+                    android:text="@string/next"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

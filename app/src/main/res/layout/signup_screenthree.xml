@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gravity="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSignup"
+        style="@style/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="@string/sign_up" />
+
+    <TextView
+        android:id="@+id/tvTeacher"
+        style="@style/teacher"
+        android:layout_width="189dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSignup"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:background="@drawable/reactangle_circle_style"
+        android:gravity="center"
+        android:text="@string/teacher"
+        android:textColor="@color/textColorBlack"
+        android:textSize="22sp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTeacher"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/reactangle_circle_style">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp">
+
+            <TextView
+                android:id="@+id/tvSelectText"
+                style="@style/select_you"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="@string/select_cat_text"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tvSelectAnyOne"
+                style="@style/select_any"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSelectText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/select_any_one"
+                android:textAllCaps="false" />
+
+            <LinearLayout
+                android:id="@+id/llNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSelectAnyOne"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/academic_drawable">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="170dp"
+                        android:background="@mipmap/icons8_drafting_compass_26pxxhdpi" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="230dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@mipmap/icons8_root_26pxxhdpi"
+                        android:padding="20dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="200dp"
+                        android:background="@mipmap/icons8_dna_helix_26pxxhdpi"
+                        android:padding="20dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="170dp"
+                        android:layout_marginBottom="37dp"
+                        android:background="@mipmap/icons8_test_tube_26pxxhdpi"
+                        android:padding="20dp" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="250dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@mipmap/icons8_microscope_50pxxxhdpi"
+                        android:padding="20dp"
+
+                        ></ImageView>
+
+                    <TextView
+                        android:id="@+id/tvAcademic"
+                        style="@style/academics"
+                        android:layout_width="272dp"
+                        android:layout_height="102dp"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="@string/academics"
+                        android:textAllCaps="false" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+
+                    android:background="@drawable/hobby_drawable">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="190dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@mipmap/icons8_dancing_48pxxxxhdpi"
+
+                        />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="230dp"
+                        android:background="@mipmap/icons8_guitar_48px_1xxxhdpi"
+                        android:padding="20dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="150dp"
+                        android:background="@mipmap/icons8_music_notation_26pxxxxhdpi"
+                        android:padding="20dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="155dp"
+                        android:layout_marginBottom="37dp"
+                        android:background="@mipmap/icons8_bass_drum_26pxxxxhdpi"
+                        android:padding="20dp" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="210dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@mipmap/icons8_folk_music_26pxxxxhdpi"
+                        android:padding="20dp"
+
+                        ></ImageView>
+
+                    <TextView
+                        android:id="@+id/tvHobby"
+                        style="@style/hobby"
+                        android:layout_width="272dp"
+                        android:layout_height="102dp"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+
+                        android:text="@string/hobby"
+                        android:textAllCaps="false" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

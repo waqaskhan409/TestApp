@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><!-- res/drawable/rounded_edittext.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/colorGrayDark" />
+            <stroke android:color="@color/colorGrayDark" />
+            <corners android:radius="19dp" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/white" />
+            <stroke android:color="@color/colorGrayDark" />
+
+            <corners
+                android:bottomLeftRadius="19dp"
+                android:bottomRightRadius="19dp"
+                android:topLeftRadius="19dp"
+                android:topRightRadius="19dp" />
+        </shape>
+    </item>
+</layer-list>

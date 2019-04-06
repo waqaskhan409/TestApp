@@ -1,0 +1,194 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="test_app">Test APP</string>
+    <string name="login">LOGIN</string>
+    <string name="sign_up">SIGNUP</string>
+    <string name="teacher">teacher</string>
+    <string name="title">title:</string>
+
+    <string-array name="title_arrays">
+        <item>Ms.</item>
+        <item>Miss</item>
+        <item>Mrs.</item>
+        <item>Mr.</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="occupation_arrays">
+        <item>full-time tutor</item>
+        <item>Home maker</item>
+        <item>Retired</item>
+        <item>Student</item>
+        <item>School/ College teacher</item>
+        <item>Working professional</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="exp_arrays">
+        <item>1-2 years</item>
+        <item>2-3 years</item>
+        <item>3-5 years</item>
+        <item>5-6 years</item>
+        <item>7 years+</item>
+    </string-array>
+
+    <string-array name="qualification_arrays">
+        <item>Graduate</item>
+        <item>Post Graduate</item>
+    </string-array>
+
+
+
+    <string-array name="area_arrays_for_grad">
+        <item>B.A</item>
+        <item>B.A.F</item>
+        <item>B.B.A</item>
+        <item>B.C.A</item>
+        <item>B.Com</item>
+        <item>B.E/B.Tech</item>
+        <item>B.Ed</item>
+        <item>B.M.M</item>
+        <item>B.M.S</item>
+        <item>B.Phil</item>
+        <item>B.Sc</item>
+        <item>BPharma</item>
+        <item>Diploma</item>
+        <item>L.L.B</item>
+        <item>M.B.B.S</item>
+    </string-array>
+    <string-array name="area_arrays_for_post_grad">
+        <item>B.M.M</item>
+        <item>B.M.S</item>
+        <item>B.Phil</item>
+        <item>B.Sc</item>
+        <item>B.Pharma</item>
+        <item>CA</item>
+        <item>Diploma</item>
+        <item>L.L.B</item>
+        <item>M.B.B.S</item>
+    </string-array>
+
+    <string name="title_prompt">Mr</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="contact_number">Contact number</string>
+    <string name="code">+91</string>
+    <string name="password">Password</string>
+    <string name="next">next</string>
+    <string name="verifyContactText">Verify Contact Number</string>
+    <string name="enter_otp">Enter Otp</string>
+    <string name="enter_number">Enter Number</string>
+    <string name="resend_code">resend code</string>
+    <string name="select_cat_text">select your category of teaching:</string>
+    <string name="select_any_one">(select any one)</string>
+    <string name="academics">academics.</string>
+    <string name="doubt">doubt clearing classes are one time classes meant for students who just want to revise a concept or charge a chapter, and will be paid per section of class</string>
+    <string name="hobby">hobby.</string>
+    <string name="hobbys">hobbies</string>
+    <string name="message">MESSAGES</string>
+    <string name="request">REQUESTS</string>
+    <string name="select_expertise">select your expertise</string>
+    <string name="academicss">academics</string>
+    <string name="select_class_text">select the class(es) you will teach:</string>
+    <string name="select_subject"> select your subject(s) to teach:</string>
+    <string name="class1">class 1.</string>
+    <string name="class2">class 2.</string>
+    <string name="class3">class 3.</string>
+    <string name="class4">class 4.</string>
+    <string name="class5">class 5.</string>
+    <string name="class6">class 6.</string>
+    <string name="class7">class 7.</string>
+    <string name="class8">class 8.</string>
+    <string name="class9">class 9.</string>
+    <string name="class10">class 10.</string>
+    <string name="class11">class 11.</string>
+    <string name="class12">class 12.</string>
+    <string name="guitar">guitar.</string>
+    <string name="painting">painting.</string>
+    <string name="martial_arts">martial arts.</string>
+    <string name="drum">drums and precautions.</string>
+    <string name="keyboard">keyboard.</string>
+    <string name="dance">dance.</string>
+    <string name="science">science.</string>
+    <string name="english">english.</string>
+    <string name="maths">maths.</string>
+    <string name="social">social studies.</string>
+    <string name="languages">languages.</string>
+    <string name="computer">computer science.</string>
+    <string name="personal_verification">PERSONAL VERIFICATION</string>
+    <string name="plus">+</string>
+    <string name="upload_picture">Upload your picture</string>
+    <string name="upload_a_p">upload a professional photo which clearly shows your face</string>
+    <string name="upload_cert">Upload your certification</string>
+    <string name="identity_proof">Identity Proof</string>
+    <string name="any_one">any one of</string>
+    <string name="driving_li">Driving license, aadhar card, pan card, passport.</string>
+    <string name="current_occupation">what\'s your current occupation?</string>
+    <string name="teaching_exp">what\'s your teaching experience?</string>
+    <string name="select_qualification">select your qualification.</string>
+    <string name="select_area_qualification">select area of qualification.</string>
+    <string name="university">University</string>
+    <string name="specialisation">Specialisation</string>
+    <string name="qualificat">Qualification Year</string>
+    <string name="select_board">select your board(s):</string>
+    <string name="cbse">CBSE</string>
+    <string name="icse">ICSE</string>
+    <string name="state_board">State Board</string>
+    <string name="select_exp">select your experience:</string>
+    <string name="select_exp_">select your experience</string>
+    <string name="starting_out">starting out</string>
+    <string name="one_three_years_e">1-3 years experience</string>
+    <string name="four_ten_years_e">4-10 years experience</string>
+    <string name="eleven_year_e">11+ years experience</string>
+    <string name="intermediate">intermediate</string>
+    <string name="expert">expert</string>
+    <string name="how_many_hours">how many hours are you willing to work each week?</string>
+    <string name="select_working_hours">select your working hours</string>
+    <string name="more_than_30_hour">more than 30hrs/week</string>
+    <string name="less_than_30_hour">less than 30hrs/week</string>
+    <string name="as_when_needed">as and when needed</string>
+    <string name="write_review">write your professional overview</string>
+    <string name="highlight_skills">highlight your teaching skills, your educational qualifications and degree(s), teaching methodology and experience.</string>
+    <string name="conduct_classes">where will you conduct your classes?</string>
+    <string name="at_home">at my home.</string>
+    <string name="at_student_home">at student\'s home.</string>
+    <string name="setup_rates">setup your rates</string>
+    <string name="how_would_you_charge">how would you charge?</string>
+    <string name="select_all">*select all that applies</string>
+    <string name="monthly">monthly.</string>
+    <string name="weekly">weekly.</string>
+    <string name="per_class">per class basis.</string>
+    <string name="how_would_charge">how would you charge your doubt clearing classes?</string>
+    <string name="chapter_wise">chapter wise.</string>
+    <string name="concept_wise">concept wise.</string>
+    <string name="et_hint">adding a detailed description will help you get more relevant queries. Eg: I, Arun Dev, have done my graduation in B.Ed. from HR college, Mumbai University in 2012. I have 4 years of experience in teaching Maths and Science for std. 4-10 for CBSE and ICSE boards.</string>
+    <string name="mr">Mr.</string>
+    <string name="enter_name">Please enter first name</string>
+    <string name="enter_lastname">Please enter last name</string>
+    <string name="enter_phone">Please enter phone number</string>
+    <string name="enter_password">Please enter password</string>
+    <string name="enter_correct_phone">Please enter correct number</string>
+    <string name="enter_correct_otp">Please enter OTP</string>
+    <string name="enter_university">Please enter university</string>
+    <string name="enter_specialisation">Please enter specialisation</string>
+    <string name="enter_qualification_year">Please enter qualification year</string>
+    <string name="profile_image">Please put profile image</string>
+    <string name="certificate">Please put certificates</string>
+    <string name="proof_document">Please put any one proof document</string>
+    <string name="select_board_message">Please select board</string>
+    <string name="select_exp_message">Please select experince</string>
+    <string name="select_hour_message">Please select working hours</string>
+    <string name="select_place">Please select classes place</string>
+    <string name="select_chargestype">Please select charges type</string>
+    <string name="select_chargesdoubt">Please select charges for doubts</string>
+    <string name="sign_up_message">Signup Successful!</string>
+    <string name="error">Failure!</string>
+    <string name="choose_classes">Please choose classes</string>
+    <string name="choose_subjects">Please choose subjects</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="sending">Sending Please wait...</string>
+    <string name="title_activity_rquest_and_messages">RquestAndMessages</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="users">users</string>
+</resources>

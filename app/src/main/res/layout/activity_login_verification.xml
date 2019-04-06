@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTestApp"
+        style="@style/test_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/test_app"
+        />
+
+    <TextView
+        android:id="@+id/tvSignup"
+        style="@style/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTestApp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/login"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSignup"
+        android:layout_margin="10dp"
+        android:background="@drawable/reactangle_circle_style">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp">
+
+            <TextView
+                android:id="@+id/tvVerifyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/verifyContactText"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorBlack"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/tvEnterOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvVerifyText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/enter_otp"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorBlack"
+                android:textSize="20sp"
+                />
+
+            <LinearLayout
+                android:id="@+id/llNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEnterOtp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvNoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/code"
+                    android:textAllCaps="true"
+                    android:textColor="@color/textColorBlack"
+                    android:textSize="20sp"
+                    />
+
+                <EditText
+                    android:id="@+id/edtNumber"
+                    fontPath="fonts/Montserrat-Light.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/enter_number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:padding="10dp"
+                    android:textColor="@color/textColorBlack"
+                    android:textColorHint="@color/colorGrayDark"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,MissingPrefix" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llNumber"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtNumberOne"
+                    fontPath="fonts/Montserrat-Light.otf"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circle_style"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/textColorBlack"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,MissingPrefix" />
+
+                <EditText
+                    android:id="@+id/edtNumberTwo"
+                    fontPath="fonts/Montserrat-Light.otf"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circle_style"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/textColorBlack"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,MissingPrefix" />
+
+                <EditText
+                    android:id="@+id/edtNumberThree"
+                    fontPath="fonts/Montserrat-Light.otf"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circle_style"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/textColorBlack"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,MissingPrefix" />
+
+                <EditText
+                    android:id="@+id/edtNumberFour"
+                    fontPath="fonts/Montserrat-Light.otf"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circle_style"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/textColorBlack"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,MissingPrefix" />
+
+                <EditText
+                    android:id="@+id/edtNumberFive"
+                    fontPath="fonts/Montserrat-Light.otf"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circle_style"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/textColorBlack"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,MissingPrefix" />
+
+                <EditText
+                    android:id="@+id/edtNumberSix"
+                    fontPath="fonts/Montserrat-Light.otf"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circle_style"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/textColorBlack"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,MissingPrefix" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvResendCode"
+                android:layout_width="189dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llOtp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/reactangle_circle_style"
+                android:gravity="center"
+                android:text="@string/resend_code"
+                android:textColor="@color/textColorBlack"
+                android:textSize="22sp"
+                />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvResendCode"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/reactangle_circle_style"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

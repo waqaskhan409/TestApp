@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSignup"
+        style="@style/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/sign_up" />
+
+    <TextView
+        android:id="@+id/tvAcademics"
+        style="@style/academics2"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tvSignup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/reactangle_circle_style"
+        android:gravity="center"
+        android:text="@string/hobbys" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAcademics"
+        android:layout_margin="10dp"
+        android:background="@drawable/reactangle_circle_style"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
+
+
+            <TextView
+                android:id="@+id/SelectExp"
+                style="@style/select_you_exp"
+                android:layout_width="263dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tvStateBoard"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="@string/select_exp" />
+
+            <TextView
+                android:id="@+id/tvSelectExperince"
+                style="@style/select_you_exp_"
+                android:layout_width="320dp"
+                android:layout_height="52dp"
+                android:layout_below="@+id/SelectExp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/reactangle_cert"
+                android:drawableRight="@mipmap/chevron_with_circle_downxhdpi"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/select_exp_"
+                tools:ignore="RtlSymmetry" />
+
+            <LinearLayout
+                android:id="@+id/LLExpDropdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSelectExperince"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/LLStartingOut"
+                    android:layout_width="300dp"
+                    android:layout_height="52dp"
+                    android:background="@drawable/reactangle_cert"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <TextView
+                        android:id="@+id/tvStartingOut"
+                        style="@style/starting_o"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/starting_out" />
+
+                    <TextView
+                        style="@style/one_three_years_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/one_three_years_e" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LLIntermediate"
+                    android:layout_width="300dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/reactangle_cert"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <TextView
+                        android:id="@+id/tvIntermediate"
+                        style="@style/starting_o"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/intermediate" />
+
+                    <TextView
+                        style="@style/one_three_years_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/four_ten_years_e" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/LLExpert"
+                    android:layout_width="300dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/reactangle_cert"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <TextView
+                        android:id="@+id/tvExpert"
+                        style="@style/starting_o"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/expert" />
+
+                    <TextView
+                        style="@style/one_three_years_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/eleven_year_e" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/howManyHours"
+                style="@style/how_many_h"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LLExpDropdown"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="@string/how_many_hours" />
+
+            <TextView
+                android:id="@+id/tvSelectWorkingHours"
+                style="@style/select_you_exp_"
+                android:layout_width="320dp"
+                android:layout_height="52dp"
+                android:layout_below="@+id/howManyHours"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/reactangle_cert"
+                android:drawableRight="@mipmap/chevron_with_circle_downxhdpi"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/select_working_hours"
+                tools:ignore="RtlSymmetry" />
+
+            <LinearLayout
+                android:id="@+id/LLWorkingHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSelectWorkingHours"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvmoreThan30Hour"
+                    style="@style/more_than_"
+                    android:layout_width="300dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/reactangle_cert"
+                    android:gravity="center"
+                    android:text="@string/more_than_30_hour"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/tvlessThan30Hour"
+                    style="@style/more_than_"
+                    android:layout_width="300dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/reactangle_cert"
+                    android:gravity="center"
+                    android:text="@string/less_than_30_hour"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/tvasWhenNeeded"
+                    style="@style/more_than_"
+                    android:layout_width="300dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/reactangle_cert"
+                    android:gravity="center"
+                    android:text="@string/as_when_needed"
+                    tools:ignore="RtlSymmetry" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnNext"
+                style="@style/next"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/LLWorkingHours"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/reactangle_circle_style"
+                android:text="@string/next"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

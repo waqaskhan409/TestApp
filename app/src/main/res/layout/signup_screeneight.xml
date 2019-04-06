@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSignup"
+        style="@style/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/sign_up" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSignup"
+        android:layout_margin="10dp"
+        android:background="@drawable/reactangle_circle_style"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp">
+
+            <TextView
+                android:id="@+id/tvWriteReview"
+                style="@style/write_your"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/write_review" />
+
+
+            <TextView
+                android:id="@+id/tvHighlightSkills"
+                style="@style/_highlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvWriteReview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:text="@string/highlight_skills" />
+
+            <EditText
+                android:id="@+id/etOverview"
+                style="@style/adding_a_d"
+                android:layout_width="341dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="440dp"
+                android:layout_below="@+id/tvHighlightSkills"
+                fontPath="fonts/Montserrat-Light.otf"
+                tools:ignore="Autofill,MissingPrefix"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reactangle_circle_style"
+                android:gravity="top"
+                android:hint="@string/et_hint"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/btnNext"
+                style="@style/next"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/etOverview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/reactangle_circle_style"
+                android:text="@string/next"
+                android:textAllCaps="false" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
