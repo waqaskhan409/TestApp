@@ -3,10 +3,12 @@ package com.wizy.testapp.activity;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.util.Base64;
 import android.util.DisplayMetrics;
@@ -60,6 +62,7 @@ public class SignupScreenOne extends BaseActivity {
     private PopupWindow popupWindow;
     private String[] selectedTitle;
     private int width;
+    private Snackbar snackbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,7 @@ public class SignupScreenOne extends BaseActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         width = displayMetrics.widthPixels;
+
     }
 
 
@@ -80,40 +84,78 @@ public class SignupScreenOne extends BaseActivity {
     @OnClick(R.id.tvSelectTitle)
     public void onTitleClick(View v) {
         PopupWindow popUp = popupWindowsort();
-        Drawable img = getDrawable( R.mipmap.layers_for_up_arrowxxhdpi );
+//        Drawable img = getDrawable( R.mipmap.layers_for_up_arrowxxhdpi );
 
-        img.setBounds( 0, 0, 80, 40 );
-        tvSelectTitle.setCompoundDrawables(null,null, img,null);
+//        img.setBounds( 0, 0, 80, 40 );
+        tvSelectTitle.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.layers_for_up_arrowxxhdpi, 0);
+
+//        tvSelectTitle.setCompoundDrawables(null,null, img,null);
 
         popUp.showAsDropDown(v, 0, 0);
     }
 
+
+    /*The below method is for to getting data from user and save to the shared preferences*/
     @OnClick(R.id.btnNext)
     public void onNextClick() {
+
+        /*Validate the EditeText either its empty or not*/
+
       if (edtFirstName.getText().length() == 0) {
-            Toast.makeText(this, getString(R.string.enter_name), Toast.LENGTH_SHORT).show();
+
+          snackbar =Snackbar.make((findViewById(android.R.id.content)), getString(R.string.enter_name), Snackbar.LENGTH_LONG);
+          View view = snackbar.getView();
+          TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+          view.setBackgroundColor(Color.parseColor("#ba0505"));
+          textView.setTextColor(Color.WHITE);
+          snackbar.show();
+
+//            Toast.makeText(this, getString(R.string.enter_name), Toast.LENGTH_SHORT).show();
             return;
         }
         if (edtLastName.getText().length() == 0) {
-            Toast.makeText(this, getString(R.string.enter_lastname), Toast.LENGTH_SHORT).show();
+
+            snackbar =Snackbar.make((findViewById(android.R.id.content)), getString(R.string.enter_lastname), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         if (edtPhoneNumber.getText().length() == 0) {
-            Toast.makeText(this, getString(R.string.enter_phone), Toast.LENGTH_SHORT).show();
+            snackbar =Snackbar.make((findViewById(android.R.id.content)), getString(R.string.enter_phone), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         if (edtPhoneNumber.getText().length() < 10) {
-            Toast.makeText(this, getString(R.string.enter_correct_phone), Toast.LENGTH_SHORT).show();
+            snackbar =Snackbar.make((findViewById(android.R.id.content)), getString(R.string.enter_correct_phone), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         if (edtPassword.getText().length() == 0) {
-            Toast.makeText(this, getString(R.string.enter_password), Toast.LENGTH_SHORT).show();
+            snackbar =Snackbar.make((findViewById(android.R.id.content)), getString(R.string.enter_password), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
 
         try {
+            /*Save the data to the shared preferences*/
             getAppPreferenceHelper().setUserScreenOne(tvSelectTitle.getText().toString(), edtFirstName.getText().toString(),
                     edtLastName.getText().toString(), edtPhoneNumber.getText().toString(), encrypt(edtPassword.getText().toString()));
+            /*redirect to the second activity*/
             startActivity(new Intent(this, SignupScreenTwo.class));
         } catch (NoSuchPaddingException e) {
             e.printStackTrace();
@@ -148,10 +190,9 @@ public class SignupScreenOne extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onDismiss() {
-                Drawable img = getDrawable( R.mipmap.layer_for_down_arrowxxhdpi );
-                img.setBounds( 0, 0, 80, 40 );
+                /*Setting the icons according to display*/
+                tvSelectTitle.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.layer_for_down_arrowxxhdpi, 0);
 
-                tvSelectTitle.setCompoundDrawables(null,null, img,null);
             }
         });
         popupWindow.setFocusable(true);
@@ -178,10 +219,9 @@ public class SignupScreenOne extends BaseActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void dismissPopup() {
         if (popupWindow != null) {
-            Drawable img = getDrawable( R.mipmap.layer_for_down_arrowxxhdpi );
+            /*Setting the icons according to display*/
+            tvSelectTitle.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.layer_for_down_arrowxxhdpi, 0);
 
-            img.setBounds( 0, 0, 80, 40 );
-            tvSelectTitle.setCompoundDrawables(null,null, img,null);
             popupWindow.dismiss();
         }
     }
@@ -207,6 +247,7 @@ public class SignupScreenOne extends BaseActivity {
         byte[] values = cipher.doFinal(value.getBytes());
         return Base64.encodeToString(values, Base64.DEFAULT);
     }
+    /*The below function is for Same font to the whole Activity*/
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));

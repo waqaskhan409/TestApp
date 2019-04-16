@@ -47,7 +47,8 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/tvStateBoard"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="0dp"
+                android:textSize="23sp"
                 android:gravity="center"
                 android:text="@string/select_exp" />
 

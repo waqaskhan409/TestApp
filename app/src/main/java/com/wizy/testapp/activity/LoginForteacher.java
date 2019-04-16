@@ -38,6 +38,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import static com.wizy.testapp.activity.SignupScreenOne.encrypt;
 
 public class LoginForteacher extends AppCompatActivity {
+
+    /*Declaration of Variables*/
     private static final String TAG = "LoginForteacher";
     private TextView loginName, testApp, countryCode;
     private EditText mContactNo, mPassword;
@@ -50,8 +52,7 @@ public class LoginForteacher extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_forteacher);
 
-
-        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Light.otf");
+        /*Initialization the Variables start*/
         loginName = findViewById(R.id.login);
         testApp = findViewById(R.id.testApp);
         mContactNo = findViewById(R.id.edtNumber);
@@ -60,6 +61,9 @@ public class LoginForteacher extends AppCompatActivity {
         countryCode = findViewById(R.id.tvNoText);
         mDatabase = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
+        /*Initialization the Variables end*/
+
+        /*The below method is for to validate the user from the client*/
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,17 +82,6 @@ public class LoginForteacher extends AppCompatActivity {
                 }else {
                     validateUser();
                     dialog.dismiss();
-                    /*mDatabase.collection(getString(R.string.users)).document(mAuth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                            if (task.isSuccessful()) {
-                                DocumentSnapshot snapshot = task.getResult();
-                                String encryptpassword = snapshot.getString("password");
-//                                validateUser(encryptpassword);
-                                dialog.dismiss();
-                            }
-                        }
-                    });*/
                 }
             }
 
@@ -99,29 +92,35 @@ public class LoginForteacher extends AppCompatActivity {
 
 
     }
-
+    /*The below method is for to validate the user from the server side*/
     private void validateUser() {
 
 
         try {
-            String pass = encrypt(mPassword.getText().toString());
-            String cont = mContactNo.getText().toString();
-            Intent intent = new Intent(this, LoginVerification.class);
-            intent.putExtra("contact_number", cont);
-            intent.putExtra("password", pass);
+            String pass = encrypt(mPassword.getText().toString()); // encrypt the password
+            String cont = mContactNo.getText().toString(); //getting contact number
+            Intent intent = new Intent(this, LoginVerification.class); // redirect to the sms varification activity
+            intent.putExtra("contact_number", cont); // pass contact number to the next activity
+            intent.putExtra("password", pass); // pass the password to the next activity
             startActivity(intent);
 
         } catch (NoSuchPaddingException e) {
+            //Exceptions
                 e.printStackTrace();
         } catch (NoSuchAlgorithmException e) {
+            //Exceptions
             e.printStackTrace();
         } catch (InvalidAlgorithmParameterException e) {
+            //Exceptions
             e.printStackTrace();
         } catch (InvalidKeyException e) {
+            //Exceptions
             e.printStackTrace();
         } catch (BadPaddingException e) {
+            //Exceptions
             e.printStackTrace();
         } catch (IllegalBlockSizeException e) {
+            //Exceptions
             e.printStackTrace();
         }
     }
@@ -147,6 +146,8 @@ public class LoginForteacher extends AppCompatActivity {
                     }
                 });
     }
+
+    /*The below function is for Same font to the whole Activity*/
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));

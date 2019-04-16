@@ -55,9 +55,11 @@ import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
+/*This Activity is not in use*/
 public class SignupScreenSix extends BaseActivity {
     private static final String TAG = "SignupScreenSix";
-
+    /*Referencing the widgets through the bind view API*/
+    /*Start*/
     @BindView(R.id.tvSelectOccupation)
     TextView tvSelectOccupation;
 
@@ -94,8 +96,9 @@ public class SignupScreenSix extends BaseActivity {
 
     @BindView(R.id.mainLayout)
     RelativeLayout relativeLayout;
+    /*end*/
 
-
+    /*Declaration of Variables*/
     private StorageReference mStorage;
     private PopupWindow popupWindowOccupation;
     private PopupWindow popupWindowExp;
@@ -116,6 +119,7 @@ public class SignupScreenSix extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_screensix);
         ButterKnife.bind(this);
+        /*Initialization*/
         selectedOccupation = getResources().getStringArray(R.array.occupation_arrays);
         selectedExp = getResources().getStringArray(R.array.exp_arrays);
         selectedQualification = getResources().getStringArray(R.array.qualification_arrays);
@@ -132,10 +136,9 @@ public class SignupScreenSix extends BaseActivity {
         profileImageUrl = "";
         certificateImageUrl = "";
         proofImageUrl = "";
-
+        /*Initialization End*/
 
     }
-
     @OnClick(R.id.btnNext)
     public void onNextClick() {
         if (edtUniversity.getText().length() == 0) {

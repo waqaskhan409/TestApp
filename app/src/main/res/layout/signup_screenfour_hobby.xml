@@ -194,25 +194,8 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_for_guitar"
+                            android:background="@mipmap/layers_guitarxhdpi"
                             android:orientation="vertical">
-
-                            <ImageButton
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="20dp"
-                                android:background="@mipmap/icons8_guitar_48px_1xxhdpi"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:textSize="23sp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:textColor="#ccffffff"
-                                android:layout_marginLeft="20dp"
-                                android:text="@string/guitar" />
                         </LinearLayout>
 
                         <ImageView
@@ -236,25 +219,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/backgroud_for_painting"
+                            android:background="@mipmap/layers_paintingxhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="20dp"
-                                android:background="@mipmap/icons8_brush_52pxxhdpi"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="17sp"
-                                android:layout_marginTop="10dp"
-                                android:textColor="#ccffffff"
-                                android:layout_marginLeft="20dp"
-                                android:text="@string/painting" />
                         </LinearLayout>
 
                         <ImageView
@@ -285,25 +252,8 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_for_martial_arts"
+                            android:background="@mipmap/layers_martialxhdpi"
                             android:orientation="vertical">
-
-                            <ImageButton
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:layout_margin="20dp"
-                                android:background="@mipmap/icons8_attack_50pxxxxhdpi"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/martial_arts"
-                                android:textSize="17sp"
-                                android:layout_marginTop="10dp"
-                                android:textColor="#ccffffff"
-                                android:layout_marginLeft="20dp"/>
 
                         </LinearLayout>
 
@@ -328,26 +278,8 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_for_drum"
+                            android:background="@mipmap/layers_drumxhdpi"
                             android:orientation="vertical">
-
-                            <ImageButton
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="20dp"
-                                android:background="@mipmap/icons8_drum_set_64pxxhdpi"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="17sp"
-
-                                android:layout_marginTop="-5dp"
-                                android:textColor="#ccffffff"
-                                android:layout_marginLeft="20dp"
-                                android:text="@string/drum" />
                         </LinearLayout>
 
                         <ImageView
@@ -378,25 +310,8 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_for_keyboard"
+                            android:background="@mipmap/layers_keyboardxhdpi"
                             android:orientation="vertical">
-
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="20dp"
-                                android:background="@mipmap/icons8_piano_48pxxhdpi"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="21sp"
-                                android:layout_marginTop="0dp"
-                                android:textColor="#ccffffff"
-                                android:layout_marginLeft="20dp"
-                                android:text="@string/keyboard" />
                         </LinearLayout>
 
                         <ImageView
@@ -420,27 +335,10 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_for_dance"
+                            android:background="@mipmap/layers_dancexhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="10dp"
-                                android:background="@mipmap/icons8_dancing_48pxxhdpi"
-                                android:contentDescription="@string/app_name" />
 
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/dance"
-                                android:textSize="25sp"
-                                android:layout_marginTop="10dp"
-                                android:textColor="#ccffffff"
-                                android:layout_marginLeft="20dp"
-                                />
                         </LinearLayout>
 
                         <ImageView

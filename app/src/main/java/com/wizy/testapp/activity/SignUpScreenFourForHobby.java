@@ -2,11 +2,14 @@ package com.wizy.testapp.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wizy.testapp.R;
@@ -19,6 +22,8 @@ import butterknife.OnClick;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SignUpScreenFourForHobby extends BaseActivity{
+    /*Referencing the widgets through the bind view API*/
+    /*Start*/
     @BindView(R.id.LLGuitar)
     LinearLayout LLGuitar;
 
@@ -53,7 +58,9 @@ public class SignUpScreenFourForHobby extends BaseActivity{
     ImageView ivKeyboard;
 
     @BindView(R.id.ivDance)
-    ImageView ivDance;
+    /*end*/
+    /*Declaration of Variables*/
+            ImageView ivDance;
     private ArrayList<String> stringArrayList;
     private StringBuilder stringBuilder;
 
@@ -63,9 +70,11 @@ public class SignUpScreenFourForHobby extends BaseActivity{
             setContentView(R.layout.signup_screenfour_hobby);
 
         ButterKnife.bind(this);
+        /*initializition*/
         stringArrayList = new ArrayList<>();
 
     }
+    /*The below method is for to validate the user to select the classes or class*/
     @OnClick(R.id.btnNext)
     public void onNextClick() {
         stringBuilder = new StringBuilder();
@@ -78,7 +87,13 @@ public class SignUpScreenFourForHobby extends BaseActivity{
 
         }
         if (stringBuilder.length() == 0) {
-            Toast.makeText(this, R.string.choose_classes, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.choose_classes), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         getAppPreferenceHelper().setScreenFour(stringBuilder.toString());
@@ -86,7 +101,7 @@ public class SignUpScreenFourForHobby extends BaseActivity{
         intent.putExtra("category", getString(R.string.hobby));
         startActivity(intent);
     }
-
+    /*The below method is for select the class Guitar*/
     @OnClick(R.id.LLGuitar)
     public void onGuitarClick() {
         if (!ivGUitar.isShown()) {
@@ -100,7 +115,7 @@ public class SignUpScreenFourForHobby extends BaseActivity{
         }
 
     }
-
+    /*The below method is for select the class Painting*/
     @OnClick(R.id.LLPainting)
     public void onPaintingClick() {
         if (!ivPainting.isShown()) {
@@ -114,7 +129,7 @@ public class SignUpScreenFourForHobby extends BaseActivity{
         }
 
     }
-
+    /*The below method is for select the class Marital arts*/
     @OnClick(R.id.LLMartialArts)
     public void onMartialArtClick() {
         if (!ivMartialArts.isShown()) {
@@ -128,7 +143,7 @@ public class SignUpScreenFourForHobby extends BaseActivity{
         }
 
     }
-
+    /*The below method is for select the class Drum*/
     @OnClick(R.id.LLDrum)
     public void onDrumClick() {
         if (!ivDrum.isShown()) {
@@ -143,6 +158,7 @@ public class SignUpScreenFourForHobby extends BaseActivity{
 
     }
 
+    /*The below method is for select the class Keyboard*/
     @OnClick(R.id.LLkeyboard)
     public void onKeyBoardClick() {
         if (!ivKeyboard.isShown()) {
@@ -157,7 +173,7 @@ public class SignUpScreenFourForHobby extends BaseActivity{
 
 
     }
-
+    /*The below method is for select the class Dance*/
     @OnClick(R.id.LLDance)
     public void onDanceClick() {
         if (!ivDance.isShown()) {
@@ -171,6 +187,7 @@ public class SignUpScreenFourForHobby extends BaseActivity{
         }
 
     }
+    /*The below function is for Same font to the whole Activity*/
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));

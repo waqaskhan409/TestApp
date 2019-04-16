@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -12,11 +13,13 @@ import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,6 +27,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,7 +60,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SignupScreenSixForHobbies extends BaseActivity {
     private static final String TAG = "SignupScreenSixForHobbi";
-
+    /*Referencing the widgets through the bind view API*/
+    /*Start*/
     @BindView(R.id.tvSelectOccupation)
     TextView tvSelectOccupation;
     @BindView(R.id.Picture)
@@ -87,8 +92,8 @@ public class SignupScreenSixForHobbies extends BaseActivity {
     @BindView(R.id.edtUniversity)
     EditText edtUniversity;
 
-    @BindView(R.id.tvAddPicture)
-    TextView addPics;
+    @BindView(R.id.bundleProfileImage)
+    RelativeLayout addPics;
     int f, s, t ;
 
     @BindView(R.id.edtSpecialisation)
@@ -96,6 +101,8 @@ public class SignupScreenSixForHobbies extends BaseActivity {
 
     @BindView(R.id.edtQualification)
     EditText edtQualification;
+    /*end*/
+    /*Declaration of Variables*/
 
     private PopupWindow popupWindowOccupation;
     private PopupWindow popupWindowExp;
@@ -116,6 +123,7 @@ public class SignupScreenSixForHobbies extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_screensix);
         ButterKnife.bind(this);
+        /*Initialization*/
         selectedOccupation = getResources().getStringArray(R.array.occupation_arrays);
         selectedExp = getResources().getStringArray(R.array.exp_arrays);
         selectedQualification = getResources().getStringArray(R.array.qualification_arrays);
@@ -136,30 +144,116 @@ public class SignupScreenSixForHobbies extends BaseActivity {
         profileImageUrl = "";
         certificateImageUrl = "";
         proofImageUrl = "";
+        /*Initialization end*/
 
     }
+    /*The below method is for to validate the user to select the university, specialization, qualification, profile image,
+    * occupation, experience, area of graduation certification image, original document image.
+    * */
 
     @OnClick(R.id.btnNext)
     public void onNextClick() {
+        String occupation, experience, qualification, areaQualification;
+        occupation = tvSelectOccupation.getText().toString();
+        experience = tvSelectExp.getText().toString();
+        qualification = tvSelectQualification.getText().toString();
+        areaQualification = tvSelectAreaQualification.getText().toString();
+
+        if(occupation.equals(getResources().getStringArray(R.array.occupation_arrays)[0])){
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), "Please select the occupation" , Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
+            return;
+        }if(experience.equals(getResources().getStringArray(R.array.exp_arrays)[0])){
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), "Please select the experience" , Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
+            return;
+
+        }if(qualification.equals(getResources().getStringArray(R.array.qualification_arrays)[0])){
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), "Please select the qualification" , Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
+            return;
+
+        }if(areaQualification.equals(getResources().getStringArray(R.array.area_arrays_for_grad)[0])){
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), "Please select the area qualification" , Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
+            return;
+
+        }
         if (edtUniversity.getText().length() == 0) {
-            Toast.makeText(this, R.string.enter_university, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.enter_university) , Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         if (edtSpecialisation.getText().length() == 0) {
-            Toast.makeText(this, R.string.enter_specialisation, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.enter_specialisation), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         if (edtQualification.getText().length() == 0) {
-            Toast.makeText(this, R.string.enter_qualification_year, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.enter_qualification_year), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }if(TextUtils.isEmpty(profileImageUrl)){
-            Toast.makeText(this, R.string.profile_image, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.profile_image), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }if(TextUtils.isEmpty(certificateImageUrl)){
-            Toast.makeText(this, R.string.certificate, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.certificate), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }if(TextUtils.isEmpty(proofImageUrl)){
-            Toast.makeText(this, R.string.proof_document, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.proof_document), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
 
@@ -189,7 +283,7 @@ public class SignupScreenSixForHobbies extends BaseActivity {
 
     }
 
-    @OnClick(R.id.tvAddPicture)
+    @OnClick(R.id.bundleProfileImage)
     public void setOnAddpicture(){
         getImageFromAlbum(0);
     }
@@ -206,6 +300,7 @@ public class SignupScreenSixForHobbies extends BaseActivity {
         if(data == null){
             return;
         }
+        showLoading();
         String des = "Croped" +".jpg";
 
         if(reqCode == 0){
@@ -234,217 +329,23 @@ public class SignupScreenSixForHobbies extends BaseActivity {
 
         }
 
+        /*Setting Images and uploading images to the Firebase storage and get downloadable link to the Firebase storage*/
     void setImages(int req, Uri result) {
         if (req == 0) {
             resultUri = result;
-            Bitmap newImage = null;
+            /*Bitmap newImage = null;
             try {
                 newImage = getResizedBitmap(getBitmapFromUri(resultUri),64, 64 );
             } catch (IOException e) {
                 e.printStackTrace();
-            }
+            }*/
             imageView.requestLayout();
-            imageView.getLayoutParams().height = 550;
-            imageView.getLayoutParams().width = 550;
-            imageView.setImageBitmap(newImage);
+            imageView.getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT;
+            imageView.getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
+            imageView.setImageURI(resultUri);
+            addPics.setBackgroundResource(0);
 //            Picasso.get().load(resultUri).fit().centerCrop().into(imageView);
-            addPics.setVisibility(View.GONE);
-            threadForProfile.start();
-
-        }else if(req == 1){
-            resultUri = result;
-            Uri resultUri = result;
-            Bitmap newImage = null;
-            try {
-                newImage = getResizedBitmap(getBitmapFromUri(resultUri),64, 64 );
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            imageForDocument.setVisibility(View.VISIBLE);
-            Picasso.get().load(resultUri).fit().centerCrop().into(imageForDocument);
-//            imageForDocument.setImageBitmap(newImage);
-//            imageForDocument.setScaleType(ImageView.ScaleType.FIT_XY);
-            mStorage = mStorage.child("users/profiles/certifcates/" + FirebaseAuth.getInstance().getCurrentUser().getUid()+"Certificates");
-            UploadTask uploadTask =  mStorage.putFile(resultUri);
-            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                @Override
-                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                    if (!task.isSuccessful()) {
-                        throw task.getException();
-                    }
-
-                    // Continue with the task to get the download URL
-                    return mStorage.getDownloadUrl();
-                }
-            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()) {
-                        Uri downloadUri = task.getResult();
-                        certificateImageUrl = downloadUri.toString();
-                        Log.d(TAG, "onComplete: "+ certificateImageUrl);
-                        mStorage = FirebaseStorage.getInstance().getReference();
-
-                    } else {
-                        // Handle failures
-                        // ...
-                    }
-                }
-
-            });
-
-
-            try {
-            threadForCertificates.start();
-            }catch (IllegalThreadStateException e){
-                Toast.makeText(this, "Sorry, try again", Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
-            }
-
-        }else if(req == 2){
-            resultUri = result;
-            Uri resultUri = result;
-            final InputStream imageStream;
-            Bitmap newImage = null;
-            try {
-                newImage = getResizedBitmap(getBitmapFromUri(resultUri),64, 64 );
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            imageForOriginalDocument.setVisibility(View.VISIBLE);
-            Picasso.get().load(resultUri).fit().centerCrop().into(imageForOriginalDocument);
-            mStorage = mStorage.child("users/profiles/proof_document/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + "Original");
-            UploadTask uploadTask =  mStorage.putFile(resultUri);
-            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                @Override
-                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                    if (!task.isSuccessful()) {
-                        throw task.getException();
-                    }
-
-                    // Continue with the task to get the download URL
-                    return mStorage.getDownloadUrl();
-                }
-            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()) {
-                        Uri downloadUri = task.getResult();
-                        proofImageUrl = downloadUri.toString();
-                        Log.d(TAG, "onComplete: "+ proofImageUrl);
-                        mStorage = FirebaseStorage.getInstance().getReference();
-                    } else {
-                        // Handle failures
-                        // ...
-                    }
-                }
-
-            });
-//            imageForOriginalDocument.setImageBitmap(newImage);
-//            imageForDocument.setScaleType(ImageView.ScaleType.FIT_XY);
-
-        }
-    }
-    public Bitmap getResizedBitmap(Bitmap image, int bitmapWidth,
-                                   int bitmapHeight) {
-        return Bitmap.createScaledBitmap(image, bitmapWidth, bitmapHeight,
-                true);
-    }
-    private Bitmap getBitmapFromUri(Uri uri) throws IOException {
-        ParcelFileDescriptor parcelFileDescriptor =
-                getContentResolver().openFileDescriptor(uri, "r");
-        FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
-        Bitmap image = BitmapFactory.decodeFileDescriptor(fileDescriptor);
-        parcelFileDescriptor.close();
-        return image;
-    }
-
-    Thread threadForProofDocument = new Thread(new Runnable() {
-        @Override
-        public void run() {
-
-            final InputStream imageStream;
-
-//                imageStream = getContentResolver().openInputStream(resultUri);
-//                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-//                imageForOriginalDocument.setVisibility(View.VISIBLE);
-//                imageForOriginalDocument.setImageBitmap(selectedImage);
-//                imageForOriginalDocument.setScaleType(ImageView.ScaleType.FIT_XY);
-                mStorage = mStorage.child("users/profiles/proof_document/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + ".jpeg");
-                UploadTask uploadTask =  mStorage.putFile(resultUri);
-                Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                    @Override
-                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if (!task.isSuccessful()) {
-                            throw task.getException();
-                        }
-
-                        // Continue with the task to get the download URL
-                        return mStorage.getDownloadUrl();
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Uri> task) {
-                        if (task.isSuccessful()) {
-                            Uri downloadUri = task.getResult();
-                            proofImageUrl = downloadUri.toString();
-                            Log.d(TAG, "onComplete: "+ proofImageUrl);
-                            mStorage = FirebaseStorage.getInstance().getReference();
-                        } else {
-                            // Handle failures
-                            // ...
-                        }
-                    }
-
-                });
-
-
-        }
-    });
-
-
-    Thread threadForCertificates = new Thread(new Runnable() {
-        @Override
-        public void run() {
-
-                mStorage = mStorage.child("users/profiles/certifcates/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + ".jpeg");
-                UploadTask uploadTask =  mStorage.putFile(resultUri);
-                Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                    @Override
-                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if (!task.isSuccessful()) {
-                            throw task.getException();
-                        }
-
-                        // Continue with the task to get the download URL
-                        return mStorage.getDownloadUrl();
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Uri> task) {
-                        if (task.isSuccessful()) {
-                            Uri downloadUri = task.getResult();
-                            certificateImageUrl = downloadUri.toString();
-                            Log.d(TAG, "onComplete: "+ certificateImageUrl);
-                            mStorage = FirebaseStorage.getInstance().getReference();
-
-                        } else {
-                            // Handle failures
-                            // ...
-                        }
-                    }
-
-                });
-
-
-
-        }
-    });
-
-
-    Thread threadForProfile = new Thread(new Runnable() {
-        @Override
-        public void run() {
+//            addPics.setVisibility(View.GONE);
 
             mStorage = mStorage.child("users/profiles/profile_image/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + ".jpeg");
             UploadTask uploadTask =  mStorage.putFile(resultUri);
@@ -452,6 +353,13 @@ public class SignupScreenSixForHobbies extends BaseActivity {
                 @Override
                 public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
                     if (!task.isSuccessful()) {
+                        Snackbar snackbar;
+                        snackbar = Snackbar.make((findViewById(android.R.id.content)), "Error in image loading", Snackbar.LENGTH_LONG);
+                        View view = snackbar.getView();
+                        TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+                        view.setBackgroundColor(Color.parseColor("#ba0505"));
+                        textView.setTextColor(Color.WHITE);
+                        snackbar.show();
                         throw task.getException();
                     }
 
@@ -466,6 +374,7 @@ public class SignupScreenSixForHobbies extends BaseActivity {
                         profileImageUrl = downloadUri.toString();
                         Log.d(TAG, "onComplete: "+ profileImageUrl);
                         mStorage = FirebaseStorage.getInstance().getReference();
+                        hideLoading();
 
                     } else {
                         // Handle failures
@@ -474,50 +383,150 @@ public class SignupScreenSixForHobbies extends BaseActivity {
                 }
 
             });
+//            threadForProfile.start();
+
+        }else if(req == 1){
+            resultUri = result;
+            imageForDocument.setVisibility(View.VISIBLE);
+            Picasso.get().load(resultUri).fit().centerCrop().into(imageForDocument);
+//            imageForDocument.setImageBitmap(newImage);
+//            imageForDocument.setScaleType(ImageView.ScaleType.FIT_XY);
+            mStorage = mStorage.child("users/profiles/certifcates/" + FirebaseAuth.getInstance().getCurrentUser().getUid()+"Certificates");
+            UploadTask uploadTask =  mStorage.putFile(resultUri);
+            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        Snackbar snackbar;
+                        snackbar = Snackbar.make((findViewById(android.R.id.content)), "Error in image loading", Snackbar.LENGTH_LONG);
+                        View view = snackbar.getView();
+                        TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+                        view.setBackgroundColor(Color.parseColor("#ba0505"));
+                        textView.setTextColor(Color.WHITE);
+                        snackbar.show();
+                        throw task.getException();
+                    }
+
+                    // Continue with the task to get the download URL
+                    return mStorage.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
+                        certificateImageUrl = downloadUri.toString();
+                        Log.d(TAG, "onComplete: "+ certificateImageUrl);
+                        mStorage = FirebaseStorage.getInstance().getReference();
+                        hideLoading();
+
+                    } else {
+                        // Handle failures
+                        // ...
+                    }
+                }
+
+            });
+
+
+
+
+        }else if(req == 2){
+            resultUri = result;
+            Uri resultUri = result;
+            imageForOriginalDocument.setVisibility(View.VISIBLE);
+            Picasso.get().load(resultUri).fit().centerCrop().into(imageForOriginalDocument);
+            mStorage = mStorage.child("users/profiles/proof_document/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + "Original");
+            UploadTask uploadTask =  mStorage.putFile(resultUri);
+            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+
+                        Snackbar snackbar;
+                        snackbar = Snackbar.make((findViewById(android.R.id.content)), "Error in image loading", Snackbar.LENGTH_LONG);
+                        View view = snackbar.getView();
+                        TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+                        view.setBackgroundColor(Color.parseColor("#ba0505"));
+                        textView.setTextColor(Color.WHITE);
+                        snackbar.show();
+                        throw task.getException();
+                    }
+
+                    // Continue with the task to get the download URL
+                    return mStorage.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
+                        proofImageUrl = downloadUri.toString();
+
+                        Log.d(TAG, "onComplete: "+ proofImageUrl);
+                        mStorage = FirebaseStorage.getInstance().getReference();
+                        hideLoading();
+                    } else {
+                        // Handle failures
+                        // ...
+                    }
+                }
+
+            });
+//            imageForOriginalDocument.setImageBitmap(newImage);
+//            imageForDocument.setScaleType(ImageView.ScaleType.FIT_XY);
+
         }
-    });
+    }
 
 
+
+
+    /*Show drop down menu*/
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @OnClick(R.id.tvSelectOccupation)
     public void onOccupationClick(View v) {
-        Drawable img = this.getResources().getDrawable( R.mipmap.chevron_with_circle_upxhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectOccupation.setCompoundDrawables(null,null, img,null);
+        /*Setting responsive icon*/
+        tvSelectOccupation.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_upxhdpi, 0);
+
         PopupWindow popUp = popupOccupation(v);
         popUp.showAsDropDown(v, 0, 10);
     }
 
+    /*Show drop down menu*/
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @OnClick(R.id.tvSelectExp)
     public void onExpClick(View v) {
-        Drawable img = this.getResources().getDrawable( R.mipmap.chevron_with_circle_upxhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectExp.setCompoundDrawables(null,null, img,null);
+        /*Setting responsive icon*/
+        tvSelectExp.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_upxhdpi, 0);
+
         PopupWindow popUp = popupWindowExp();
         popUp.showAsDropDown(v, 0, 10);
     }
 
+    /*Show drop down menu*/
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @OnClick(R.id.tvSelectQualification)
     public void onQualificationClick(View v) {
-        Drawable img = this.getResources().getDrawable( R.mipmap.chevron_with_circle_upxhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectQualification.setCompoundDrawables(null,null,img,null);
+
+        /*Setting responsive icon*/
+        tvSelectQualification.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_upxhdpi, 0);
 
         PopupWindow popUp = popupWindowQualification();
         popUp.showAsDropDown(v, 0, 10);
     }
 
+    /*Show drop down menu*/
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @OnClick(R.id.tvSelectAreaQualification)
     public void onAreaClick(View v) {
-        Drawable img = this.getResources().getDrawable( R.mipmap.chevron_with_circle_upxhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectAreaQualification.setCompoundDrawables(null,null, img,null);
+
+        /*Setting responsive icon*/
+        tvSelectAreaQualification.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_upxhdpi, 0);
+
         PopupWindow popUp = popupWindowArea();
         popUp.showAsDropDown(v, 0, 10);
     }
@@ -533,9 +542,10 @@ public class SignupScreenSixForHobbies extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onDismiss() {
-                Drawable img = getDrawable( R.mipmap.chevron_with_circle_downxhdpi );
-                img.setBounds( 0, 0, 120, 120 );
-                tvSelectOccupation.setCompoundDrawables(null,null,img,null);
+
+                /*Setting responsive icon*/
+                tvSelectOccupation.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
 
             }
         });
@@ -557,10 +567,10 @@ public class SignupScreenSixForHobbies extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
-                Drawable img = getDrawable( R.mipmap.chevron_with_circle_downxhdpi );
-                img.setBounds( 0, 0, 120, 120 );
+                /*Setting responsive icon*/
+                tvSelectOccupation.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
                 tvSelectOccupation.setText(selectedOccupation[position]);
-                tvSelectOccupation.setCompoundDrawables(null,null,img,null);
 
                 if (popupWindowOccupation != null) {
                     popupWindowOccupation.dismiss();
@@ -584,9 +594,9 @@ public class SignupScreenSixForHobbies extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onDismiss() {
-                Drawable img = getDrawable( R.mipmap.chevron_with_circle_downxhdpi );
-                img.setBounds( 0, 0, 120, 120 );
-                tvSelectExp.setCompoundDrawables(null,null,img,null);
+
+                /*Setting responsive icon*/
+                tvSelectExp.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
 
             }
         });
@@ -603,10 +613,11 @@ public class SignupScreenSixForHobbies extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
-                Drawable img = getDrawable( R.mipmap.chevron_with_circle_downxhdpi );
-                img.setBounds( 0, 0, 120, 120 );
+
+                /*Setting responsive icon*/
+                tvSelectQualification.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
                 tvSelectExp.setText(selectedExp[position]);
-                tvSelectExp.setCompoundDrawables(null,null, img,null);
 
                 if (popupWindowExp != null) {
                     popupWindowExp.dismiss();
@@ -630,9 +641,9 @@ public class SignupScreenSixForHobbies extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onDismiss() {
-                Drawable img = getDrawable( R.mipmap.chevron_with_circle_downxhdpi );
-                img.setBounds( 0, 0, 120, 120 );
-                tvSelectQualification.setCompoundDrawables(null,null,img,null);
+
+                /*Setting responsive icon*/
+                tvSelectQualification.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
 
             }
         });
@@ -649,10 +660,10 @@ public class SignupScreenSixForHobbies extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
-                Drawable img = getDrawable( R.mipmap.chevron_with_circle_downxhdpi );
-                img.setBounds( 0, 0, 120, 120 );
+
                 tvSelectQualification.setText(selectedQualification[position]);
-                tvSelectQualification.setCompoundDrawables(null,null, img,null);
+                /*Setting responsive icon*/
+                tvSelectQualification.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
 
                 if (popupWindowQualification != null) {
                     popupWindowQualification.dismiss();
@@ -668,11 +679,11 @@ public class SignupScreenSixForHobbies extends BaseActivity {
         popupWindowArea.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.reactangle_cert));
         ArrayAdapter<String> adapter = null;
         if(tvSelectQualification.getText().toString()
-                .equals(selectedQualification[0])){
+                .equals(selectedQualification[1])){
             adapter = new ArrayAdapter<String>(this, R.layout.spinner_dropdown_items,
                     getResources().getStringArray(R.array.area_arrays_for_grad));
         }else if (tvSelectQualification.getText().toString().equals
-                (selectedQualification[1])){
+                (selectedQualification[2])){
         adapter = new ArrayAdapter<String>(this, R.layout.spinner_dropdown_items,
                 getResources().getStringArray(R.array.area_arrays_for_post_grad));
 
@@ -686,9 +697,10 @@ public class SignupScreenSixForHobbies extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onDismiss() {
-                Drawable img = getDrawable( R.mipmap.chevron_with_circle_downxhdpi );
-                img.setBounds( 0, 0, 120, 120 );
-                tvSelectAreaQualification.setCompoundDrawables(null,null,img,null);
+
+                /*Setting responsive icon*/
+                tvSelectAreaQualification.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
 
             }
         });
@@ -705,10 +717,11 @@ public class SignupScreenSixForHobbies extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
-                Drawable img = getDrawable( R.mipmap.chevron_with_circle_downxhdpi );
-                img.setBounds( 0, 0, 120, 120 );
+
+                /*Setting responsive icon*/
+                tvSelectAreaQualification.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
                 tvSelectAreaQualification.setText(selectedArea[position]);
-                tvSelectAreaQualification.setCompoundDrawables(null,null, img,null);
 
 
                 if (popupWindowArea != null) {
@@ -730,6 +743,8 @@ public class SignupScreenSixForHobbies extends BaseActivity {
             popupWindow.setWidth(width - 100);
         }
     }
+    /*The below function is for Same font to the whole Activity*/
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));

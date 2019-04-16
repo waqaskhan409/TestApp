@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -22,7 +23,8 @@ import butterknife.OnClick;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SignupScreenSeven extends BaseActivity {
-
+    /*Referencing the widgets through the bind view API*/
+    /*Start*/
     @BindView(R.id.tvSelectExperince)
     TextView tvSelectExperince;
 
@@ -70,7 +72,8 @@ public class SignupScreenSeven extends BaseActivity {
 
     @BindView(R.id.LLExpert)
     LinearLayout LLExpert;
-
+    /*end*/
+    /*Declaration and initialization of Variables*/
     private String board = "";
     private String experince = "";
     private String workingHour = "";
@@ -82,25 +85,46 @@ public class SignupScreenSeven extends BaseActivity {
         ButterKnife.bind(this);
     }
 
+    /*The below method is for to validate the user to select the board, experience and working hour then store the data
+    * in the shared preferences
+    * */
     @OnClick(R.id.btnNext)
     public void onNextClick() {
         if (board.equals("")) {
-            Toast.makeText(this, R.string.select_board_message, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.select_board_message), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         if (experince.equals("")) {
-            Toast.makeText(this, R.string.select_exp_message, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.select_exp_message), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         if (workingHour.equals("")) {
-            Toast.makeText(this, R.string.select_hour_message, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.select_hour_message), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         getAppPreferenceHelper().setUserScreenSeven(board, experince, workingHour);
 
         startActivity(new Intent(this, SignupScreenEight.class));
     }
-
+    /*The below method is to select the board and deselect the another ones*/
     @OnClick(R.id.tvCBSE)
     public void onCBSEClick() {
         board = "CBSE";
@@ -111,7 +135,7 @@ public class SignupScreenSeven extends BaseActivity {
         tvStateBoard.setBackgroundResource(R.drawable.reactangle_cert);
         tvStateBoard.setTextColor(Color.parseColor("#000000"));
     }
-
+    /*The below method is to select the board and deselect the another ones*/
     @OnClick(R.id.tvICSE)
     public void onICSEClick() {
         board = "ICSE";
@@ -122,7 +146,7 @@ public class SignupScreenSeven extends BaseActivity {
         tvStateBoard.setBackgroundResource(R.drawable.reactangle_cert);
         tvStateBoard.setTextColor(Color.parseColor("#000000"));
     }
-
+    /*The below method is to select the board and deselect the another ones*/
     @OnClick(R.id.tvStateBoard)
     public void onStateBoardClick() {
         board = "State Board";
@@ -133,39 +157,39 @@ public class SignupScreenSeven extends BaseActivity {
         tvStateBoard.setBackgroundResource(R.drawable.reactangle_cert_black);
         tvStateBoard.setTextColor(Color.parseColor("#ffffff"));
     }
-
+    /*Show drop down menu*/
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @OnClick(R.id.tvSelectExperince)
     public void onExpClick() {
         if (!LLExpDropdown.isShown()) {
-            Drawable img = getDrawable( R.mipmap.chevron_with_circle_upxhdpi );
-            img.setBounds( 0, 0, 120, 120 );
-            tvSelectExperince.setCompoundDrawables(null,null, img,null);
+            /*Setting responsive icon*/
+            tvSelectExperince.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_upxhdpi, 0);
+
             LLExpDropdown.setVisibility(View.VISIBLE);
         } else {
             LLExpDropdown.setVisibility(View.GONE);
-            Drawable img = getDrawable( R.mipmap.chevron_with_circle_downxhdpi );
-            img.setBounds( 0, 0, 120, 120 );
-            tvSelectExperince.setCompoundDrawables(null,null, img,null);
+            /*Setting responsive icon*/
+            tvSelectExperince.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
         }
 
     }
-
+    /*Show drop down menu*/
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @OnClick(R.id.tvSelectWorkingHours)
     public void onHoursClick() {
         if (!LLWorkingHours.isShown()) {
             LLWorkingHours.setVisibility(View.VISIBLE);
-            Drawable img = getDrawable( R.mipmap.chevron_with_circle_upxhdpi );
-            img.setBounds( 0, 0, 120, 120 );
-            tvSelectWorkingHours.setCompoundDrawables(null,null, img,null);
+            /*Setting responsive icon*/
+            tvSelectWorkingHours.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_upxhdpi, 0);
+
         } else {
             LLWorkingHours.setVisibility(View.GONE);
-            Drawable img = getDrawable( R.mipmap.chevron_with_circle_downhdpi );
-            img.setBounds( 0, 0, 120, 120 );
-            tvSelectWorkingHours.setCompoundDrawables(null,null, img,null);
+            /*Setting responsive icon*/
+            tvSelectWorkingHours.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
         }
 
     }
@@ -175,9 +199,10 @@ public class SignupScreenSeven extends BaseActivity {
     @OnClick(R.id.LLStartingOut)
     public void onStartingOutClick() {
         experince = tvStartingOut.getText().toString();
-        Drawable img = getDrawable( R.mipmap.chevron_with_circle_downhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectExperince.setCompoundDrawables(null,null, img,null);
+        /*Setting responsive icon*/
+
+        tvSelectExperince.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
         tvSelectExperince.setText(tvStartingOut.getText().toString());
         LLExpDropdown.setVisibility(View.GONE);
     }
@@ -187,9 +212,10 @@ public class SignupScreenSeven extends BaseActivity {
     @OnClick(R.id.LLIntermediate)
     public void onIntermediateClick() {
         experince = tvIntermediate.getText().toString();
-        Drawable img = getDrawable( R.mipmap.chevron_with_circle_downhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectExperince.setCompoundDrawables(null,null, img,null);
+        /*Setting responsive icon*/
+
+        tvSelectExperince.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
         tvSelectExperince.setText(tvIntermediate.getText().toString());
         LLExpDropdown.setVisibility(View.GONE);
     }
@@ -199,9 +225,9 @@ public class SignupScreenSeven extends BaseActivity {
     @OnClick(R.id.LLExpert)
     public void onExpertClick() {
         experince = tvExpert.getText().toString();
-        Drawable img = getDrawable( R.mipmap.chevron_with_circle_downhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectExperince.setCompoundDrawables(null,null, img,null);
+        /*Setting responsive icon*/
+        tvSelectExperince.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
         tvSelectExperince.setText(tvExpert.getText().toString());
         LLExpDropdown.setVisibility(View.GONE);
     }
@@ -211,9 +237,10 @@ public class SignupScreenSeven extends BaseActivity {
     @OnClick(R.id.tvmoreThan30Hour)
     public void onMoreClick() {
         workingHour = tvmoreThan30Hour.getText().toString();
-        Drawable img = getDrawable( R.mipmap.chevron_with_circle_downhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectWorkingHours.setCompoundDrawables(null,null, img,null);
+                   /*Setting responsive icon*/
+
+        tvSelectWorkingHours.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
         tvSelectWorkingHours.setText(tvmoreThan30Hour.getText().toString());
         LLWorkingHours.setVisibility(View.GONE);
     }
@@ -223,9 +250,9 @@ public class SignupScreenSeven extends BaseActivity {
     @OnClick(R.id.tvlessThan30Hour)
     public void onLessClick() {
         workingHour = tvlessThan30Hour.getText().toString();
-        Drawable img = getDrawable( R.mipmap.chevron_with_circle_downhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectWorkingHours.setCompoundDrawables(null,null, img,null);
+        /*Setting responsive icon*/
+        tvSelectWorkingHours.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
         tvSelectWorkingHours.setText(tvlessThan30Hour.getText().toString());
         LLWorkingHours.setVisibility(View.GONE);
     }
@@ -235,14 +262,13 @@ public class SignupScreenSeven extends BaseActivity {
     @OnClick(R.id.tvasWhenNeeded)
     public void onNeededClick() {
         workingHour = tvasWhenNeeded.getText().toString();
-        Drawable img = getDrawable( R.mipmap.chevron_with_circle_downhdpi );
-        img.setBounds( 0, 0, 120, 120 );
-        tvSelectWorkingHours.setCompoundDrawables(null,null, img,null);
+        /*Setting responsive icon*/
+        tvSelectWorkingHours.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.chevron_with_circle_downxhdpi, 0);
+
         tvSelectWorkingHours.setText(tvasWhenNeeded.getText().toString());
         LLWorkingHours.setVisibility(View.GONE);
     }
-
-
+    /*The below function is for Same font to the whole Activity*/
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));

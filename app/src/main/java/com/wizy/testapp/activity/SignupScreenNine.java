@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,13 +17,15 @@ import butterknife.OnClick;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SignupScreenNine extends BaseActivity {
-
+    /*Referencing the widgets through the bind view API*/
+    /*Start*/
     @BindView(R.id.tvHome)
     TextView tvHome;
 
     @BindView(R.id.tvStudentHome)
     TextView tvStudentHome;
-
+    /*end*/
+    /*Declaration and initialization of Variables*/
     private String classesPlace = "";
 
     @Override
@@ -30,17 +34,23 @@ public class SignupScreenNine extends BaseActivity {
         setContentView(R.layout.signup_screennine);
         ButterKnife.bind(this);
     }
-
+    /*The below validate the class places either its empty or not and store to the shared preferences*/
     @OnClick(R.id.btnNext)
     public void onNextClick() {
         if (classesPlace.equals("")) {
-            Toast.makeText(this, R.string.select_place, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.select_place), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         getAppPreferenceHelper().setScreenNine(classesPlace);
         startActivity(new Intent(this, SignupScreenTen.class));
     }
-
+    /*The below  method is to select the student to teach at teacher's home*/
     @OnClick(R.id.tvHome)
     public void onHomeClick() {
         classesPlace = tvHome.getText().toString();
@@ -49,7 +59,7 @@ public class SignupScreenNine extends BaseActivity {
         tvStudentHome.setBackgroundResource(R.drawable.reactangle_cert);
         tvStudentHome.setTextColor(Color.parseColor("#ff707070"));
     }
-
+/*The below  method is to select the student to teach at student's home*/
     @OnClick(R.id.tvStudentHome)
     public void onStudentClick() {
         classesPlace = tvStudentHome.getText().toString();
@@ -58,6 +68,7 @@ public class SignupScreenNine extends BaseActivity {
         tvHome.setBackgroundResource(R.drawable.reactangle_cert);
         tvHome.setTextColor(Color.parseColor("#ff707070"));
     }
+    /*The below function is for Same font to the whole Activity*/
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));

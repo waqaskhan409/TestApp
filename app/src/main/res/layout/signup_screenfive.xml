@@ -91,24 +91,10 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/black_bg_drawable"
+                            android:background="@mipmap/layers_sciencexhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_microscope_50pxxxhdpi"
-                                android:contentDescription="@string/app_name" />
 
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:textColor="#ccffffff"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="7dp"
-                                android:textSize="23sp"
-                                android:text="@string/science" />
                         </LinearLayout>
 
                         <ImageView
@@ -132,27 +118,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/light_purple_bg_drawable"
+                            android:background="@mipmap/layers_englishxhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginLeft="10dp"
-
-                                android:background="@mipmap/icons8_noun_50pxxxhdpi"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
-                                android:textColor="#ccffffff"
-                                android:textSize="23sp"
-                                android:layout_marginLeft="10dp"
-                                android:text="@string/english" />
                         </LinearLayout>
 
                         <ImageView
@@ -183,24 +151,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/dark_blue_bg_drawable"
+                            android:background="@mipmap/layers_mathsxhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_geometry_50pxxxhdpi"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="7dp"
-                                android:textSize="21sp"
-                                android:textColor="#ccffffff"
-                                android:text="@string/maths" />
                         </LinearLayout>
 
                         <ImageView
@@ -224,26 +177,10 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/dark_sky_blue_bg_drawable"
+                            android:background="@mipmap/layers_socialxhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_strike_48pxxxhdpi"
-                                android:contentDescription="@string/app_name" />
 
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="7dp"
-                                android:layout_marginLeft="7dp"
-                                android:textColor="#ccffffff"
-                                android:layout_marginTop="10dp"
-                                android:textSize="19sp"
-                                android:text="@string/social" />
                         </LinearLayout>
 
                         <ImageView
@@ -274,25 +211,8 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_seven_bg"
+                            android:background="@mipmap/layers_languagesxhdpi"
                             android:orientation="vertical">
-
-                            <ImageButton
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="20dp"
-                                android:background="@mipmap/icons8_language_48pxxhdpi"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="7dp"
-                                android:textSize="19sp"
-                                android:textColor="#ccffffff"
-                                android:text="@string/languages" />
                         </LinearLayout>
 
                         <ImageView
@@ -316,26 +236,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_eight_bg"
+                            android:background="@mipmap/layers_computerxhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_informatics_50pxxhdpi"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="7dp"
-                                android:layout_marginLeft="7dp"
-                                android:textColor="#ccffffff"
-                                android:textSize="19sp"
-                                android:layout_marginBottom="7dp"
-                                android:text="@string/computer" />
                         </LinearLayout>
 
                         <ImageView

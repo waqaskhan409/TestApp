@@ -48,31 +48,23 @@
                 android:gravity="center"
                 android:text="@string/personal_verification" />
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="38dp"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/bundleProfileImage">
-            <TextView
-                android:id="@+id/tvAddPicture"
                 android:layout_width="123dp"
-                android:layout_height="116dp"
-                android:background="@drawable/ellipse_5"
+                android:layout_height="110dp"
+                android:layout_marginTop="58dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:textColor="@color/textColorBlack"
-                android:textSize="50sp" />
+                android:background="@drawable/circle_style"
+
+                android:id="@+id/bundleProfileImage">
 
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/Picture"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="38dp"
-                android:src="@mipmap/layers3"
-                 />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/Picture"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+
+                    android:src="@mipmap/layers3" />
             </RelativeLayout>
             <TextView
                 android:id="@+id/tvUploadYou"
@@ -224,6 +216,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
+
                 android:textStyle="bold"
                 android:text="@string/current_occupation" />
 
@@ -239,11 +232,12 @@
                 android:layout_marginRight="15dp"
                 android:background="@drawable/reactangle_cert"
                 android:drawableRight="@mipmap/chevron_with_circle_downxhdpi"
-                android:gravity="center"
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
+                android:gravity="left|center"
+                android:paddingLeft="20dp"
                 android:textColor="@color/textColorBlack"
-                android:textSize="20sp"
+                android:textSize="16sp"
 
                 tools:ignore="RtlSymmetry" />
 
@@ -273,11 +267,12 @@
                 android:layout_marginRight="15dp"
                 android:background="@drawable/reactangle_cert"
                 android:drawableRight="@mipmap/chevron_with_circle_downxhdpi"
-                android:gravity="center"
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
+                android:gravity="left|center"
+                android:paddingLeft="20dp"
                 android:textColor="@color/textColorBlack"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 tools:ignore="RtlSymmetry" />
 
             <TextView
@@ -288,7 +283,7 @@
                 android:layout_below="@+id/tvSelectExp"
                 android:layout_marginStart="15dp"
                 android:textStyle="bold"
-
+                android:textSize="15sp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/select_qualification" />
@@ -305,11 +300,12 @@
                 android:layout_marginRight="15dp"
                 android:background="@drawable/reactangle_cert"
                 android:drawableRight="@mipmap/chevron_with_circle_downxhdpi"
-                android:gravity="center"
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
+                android:gravity="left|center"
+                android:paddingLeft="20dp"
                 android:textColor="@color/textColorBlack"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 tools:ignore="RtlSymmetry" />
 
             <TextView
@@ -322,6 +318,7 @@
                 android:textStyle="bold"
 
                 android:layout_marginLeft="15dp"
+                android:textSize="15sp"
                 android:layout_marginTop="10dp"
                 android:text="@string/select_area_qualification" />
 
@@ -337,11 +334,12 @@
                 android:layout_marginRight="15dp"
                 android:background="@drawable/reactangle_cert"
                 android:drawableRight="@mipmap/chevron_with_circle_downxhdpi"
-                android:gravity="center"
+                android:gravity="left|center"
+                android:paddingLeft="20dp"
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
                 android:textColor="@color/textColorBlack"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 tools:ignore="RtlSymmetry" />
 
             <EditText

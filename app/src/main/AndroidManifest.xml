@@ -26,6 +26,10 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
+            android:name=".activity.SignupScreenFiveForSenior"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
             android:name=".activity.RquestAndMessages"
             android:label="@string/title_activity_rquest_and_messages"
             android:screenOrientation="portrait"

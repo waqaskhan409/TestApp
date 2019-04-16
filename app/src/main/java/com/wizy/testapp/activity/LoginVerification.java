@@ -2,6 +2,7 @@ package com.wizy.testapp.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -44,6 +46,9 @@ import static com.wizy.testapp.activity.SignupScreenOne.encrypt;
 
 public class LoginVerification extends BaseActivity {
     private static final String TAG = "LoginVerification";
+
+        /*Referencing the widgets through the bind view API*/
+        /*Start*/
         @BindView(R.id.edtNumber)
         EditText edtNumber;
 
@@ -64,8 +69,11 @@ public class LoginVerification extends BaseActivity {
 
         @BindView(R.id.edtNumberSix)
         EditText edtNumberSix;
+    /*end*/
 
-        private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
+
+    /*Declaration of Variables*/
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
         private FirebaseAuth firebaseAuth;
         private String mVerificationId;
         String contactNo, password;
@@ -77,20 +85,25 @@ public class LoginVerification extends BaseActivity {
             setContentView(R.layout.activity_login_verification);
             ButterKnife.bind(this);
 
+            /*Initialization the Variables start*/
             Bundle data = getIntent().getExtras();
             contactNo = data.getString("contact_number");
             password = data.getString("password");
-            edtNumber.setText(contactNo);
             firebaseAuth = FirebaseAuth.getInstance();
             mDatabase = FirebaseFirestore.getInstance();
+            /*Initialization the Variables end*/
+
+            edtNumber.setText(contactNo); //set Contact number which we passed fromthe previous activity
             setCallback();
+
+            /*The below function is for sending the sms to the Contact number */
             PhoneAuthProvider.getInstance().verifyPhoneNumber(
                     getString(R.string.code) + edtNumber.getText().toString(),
                     60,
                     TimeUnit.SECONDS,
                     this,
                     mCallbacks);
-
+            /*First EditText for the manual otp varification*/
             edtNumberOne.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -109,6 +122,7 @@ public class LoginVerification extends BaseActivity {
 
                 }
             });
+            /*Two EditText for the manual otp varification*/
             edtNumberTwo.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -127,6 +141,7 @@ public class LoginVerification extends BaseActivity {
 
                 }
             });
+            /*Three EditText for the manual otp varification*/
             edtNumberThree.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -145,6 +160,7 @@ public class LoginVerification extends BaseActivity {
 
                 }
             });
+            /*Four EditText for the manual otp varification*/
             edtNumberFour.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -163,6 +179,7 @@ public class LoginVerification extends BaseActivity {
 
                 }
             });
+            /*Five EditText for the manual otp varification*/
             edtNumberFive.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -212,22 +229,30 @@ public class LoginVerification extends BaseActivity {
 
         }
 
-        @OnClick(R.id.btnNext)
+    /*The below method is for to validate the user the contact number is either valid or not*/
+    @OnClick(R.id.btnNext)
         public void onNextClick() {
+            /*The below method is for to validate the user from the client*/
             if (edtNumberOne.getText().length() == 0 && edtNumberTwo.getText().length() == 0 && edtNumberThree.getText().length() == 0
                     && edtNumberFour.getText().length() == 0 && edtNumberFive.getText().length() == 0 && edtNumberSix.getText().length() == 0) {
-                Toast.makeText(this, getString(R.string.enter_correct_otp), Toast.LENGTH_SHORT).show();
-                return;
+                Snackbar snackbar =Snackbar.make((findViewById(android.R.id.content)), getString(R.string.enter_correct_otp), Snackbar.LENGTH_LONG);
+                View view = snackbar.getView();
+                TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+                view.setBackgroundColor(Color.parseColor("#ba0505"));
+                textView.setTextColor(Color.WHITE);
+                snackbar.show(); return;
             }
             showLoading();
+            /*The below code is for to validate the user from the server side*/
             PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, edtNumberOne.getText().toString() + edtNumberTwo.getText().toString() +
                     edtNumberThree.getText().toString() + edtNumberFour.getText().toString() + edtNumberFive.getText().toString() + edtNumberSix.getText().toString());
             signInWithPhoneAuthCredential(credential);
         }
 
-
+    /*This is resend function is for sending the sms to the Contact number */
         @OnClick(R.id.tvResendCode)
         public void onResendClick() {
+            /*The below function is for sending the sms to the Contact number */
             PhoneAuthProvider.getInstance().verifyPhoneNumber(
                     R.string.code + edtNumber.getText().toString(),
                     60,
@@ -282,9 +307,9 @@ public class LoginVerification extends BaseActivity {
                         }
                     });
         }
+
+    /*The below method is for to validate the user's password from the sever side*/
     private void validateUser(String encryptPassword) {
-
-
             String pass = password;
 
         Log.d(TAG, "validateUser: " + password + " = " + encryptPassword);
@@ -324,7 +349,7 @@ public class LoginVerification extends BaseActivity {
 
             }
     }
-
+    /*The below function is for Same font to the whole Activity*/
         @Override
         protected void attachBaseContext(Context newBase) {
             super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));

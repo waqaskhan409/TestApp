@@ -69,11 +69,11 @@ public class RquestAndMessages extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 if(position == 0){
-                    message.setBackgroundResource(0);
-                    request.setBackground(getDrawable(R.drawable.reactangle_circle_style));
+                    message.setBackgroundResource(0);// SETTING THE BACKGOUND EMPTY
+                    request.setBackground(getDrawable(R.drawable.reactangle_circle_style)); //Setting the backgound rectangle circle
                 }else if(position == 1){
-                    request.setBackgroundResource(0);
-                    message.setBackground(getDrawable(R.drawable.reactangle_circle_style));
+                    request.setBackgroundResource(0);// SETTING THE BACKGOUND EMPTY
+                    message.setBackground(getDrawable(R.drawable.reactangle_circle_style));//Setting the backgound rectangle circle
                 }
             }
 
@@ -115,69 +115,10 @@ public class RquestAndMessages extends AppCompatActivity {
 
 
     }
+    /*The below function is for Same font to the whole Activity*/
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_rquest_and_messages, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_rquest_and_messages, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-//            ((RquestAndMessages)getActivity()).SectionsPagerAdapter.settingBackground();
-
-            return rootView;
-        }
     }
 
     /**
@@ -213,4 +154,5 @@ public class RquestAndMessages extends AppCompatActivity {
             return 2;
         }
     }
+
 }

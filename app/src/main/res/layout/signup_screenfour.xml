@@ -87,23 +87,9 @@
                         android:layout_height="131dp"
                         android:layout_margin="10dp"
                         android:id="@+id/LLClass1"
-                        android:background="@drawable/black_bg_drawable"
+                        android:background="@mipmap/layers_class_1xhdpi"
                         android:orientation="vertical">
 
-
-                        <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:background="@mipmap/icons8_1st_50px"
-                            android:contentDescription="@string/app_name" />
-
-                        <TextView
-                            style="@style/class_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="@string/class1" />
                             </LinearLayout>
                         <ImageView
                             android:id="@+id/ivClass1"
@@ -127,22 +113,9 @@
                         android:id="@+id/LLClass2"
                         android:layout_height="131dp"
                         android:layout_margin="10dp"
-                        android:background="@drawable/baby_pink_bg_drawable"
+                        android:background="@mipmap/layers_class_2xhdpi"
                         android:orientation="vertical">
 
-                        <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:background="@mipmap/icons8__circled_2_50px"
-                            android:contentDescription="@string/app_name" />
-
-                        <TextView
-                            style="@style/class_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="@string/class2" />
                         </LinearLayout>
                             <ImageView
                                 android:id="@+id/ivClass2"
@@ -174,22 +147,10 @@
                         android:layout_margin="10dp"
                         android:id="@+id/LLClass3"
 
-                        android:background="@drawable/sky_blue_bg_drawable"
+                        android:background="@mipmap/layers_class_3xhdpi"
                         android:orientation="vertical">
 
-                        <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:background="@mipmap/icons8_circled_3_50px"
-                            android:contentDescription="@string/app_name" />
 
-                        <TextView
-                            style="@style/class_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="@string/class3" />
                         </LinearLayout>
                             <ImageView
                                 android:id="@+id/ivClass3"
@@ -213,21 +174,9 @@
                             android:layout_margin="10dp"
                             android:id="@+id/LLClass4"
 
-                            android:background="@drawable/light_purple_bg_drawable"
+                            android:background="@mipmap/layers_class_4xhdpi"
                             android:orientation="vertical">
-                        <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:background="@mipmap/icons8_circled_4_50px"
-                            android:contentDescription="@string/app_name" />
 
-                        <TextView
-                            style="@style/class_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="@string/class4" />
                         </LinearLayout>
                             <ImageView
                                 android:id="@+id/ivClass4"
@@ -259,22 +208,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/dark_blue_bg_drawable"
+                            android:background="@mipmap/layers_class_5xhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_circled_5_50px"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="@string/class5" />
                         </LinearLayout>
 
                         <ImageView
@@ -298,22 +234,10 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/dark_sky_blue_bg_drawable"
+                            android:background="@mipmap/layers_class_6xhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_circled_6_50px"
-                                android:contentDescription="@string/app_name" />
 
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="@string/class6" />
                         </LinearLayout>
 
                         <ImageView
@@ -344,22 +268,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_seven_bg"
+                            android:background="@mipmap/layers_class_7xhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_circled_7_50px"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="@string/class7" />
 
                         </LinearLayout>
 
@@ -384,22 +295,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_eight_bg"
+                            android:background="@mipmap/layers_class_8xhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_circled_8_50px"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="@string/class8" />
                         </LinearLayout>
 
                         <ImageView
@@ -430,22 +328,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_nine_bg"
+                            android:background="@mipmap/layers_class_9xhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_circled_9_50px"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="@string/class9" />
                         </LinearLayout>
 
                         <ImageView
@@ -469,22 +354,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_ten_bg"
+                            android:background="@mipmap/layers_class_10xhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_10_50px"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="@string/class10" />
                         </LinearLayout>
 
                         <ImageView
@@ -515,22 +387,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_eleven_bg"
+                            android:background="@mipmap/layers_class_11xhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_11_50px"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="@string/class11" />
                         </LinearLayout>
 
                         <ImageView
@@ -554,22 +413,9 @@
                             android:layout_width="143dp"
                             android:layout_height="131dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/color_twelve_bg"
+                            android:background="@mipmap/layers_class_12xhdpi"
                             android:orientation="vertical">
 
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@mipmap/icons8_12_50px"
-                                android:contentDescription="@string/app_name" />
-
-                            <TextView
-                                style="@style/class_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="@string/class12" />
                         </LinearLayout>
 
                         <ImageView

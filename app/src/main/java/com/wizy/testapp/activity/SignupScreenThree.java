@@ -3,6 +3,7 @@ package com.wizy.testapp.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.wizy.testapp.R;
@@ -14,10 +15,10 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SignupScreenThree extends BaseActivity {
 
-    @BindView(R.id.tvAcademic)
-    TextView tvAcademic;
-    @BindView(R.id.tvHobby)
-    TextView tvHobby;
+    @BindView(R.id.rlAcademics)
+    RelativeLayout tvAcademic;
+    @BindView(R.id.rlHobby)
+    RelativeLayout tvHobby;
 
 
     @Override
@@ -27,17 +28,21 @@ public class SignupScreenThree extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.tvAcademic)
+    /*The below method is for select the user's Academics area */
+    @OnClick(R.id.rlAcademics)
     public void onAcademicClick()
     {
-        getAppPreferenceHelper().setUserScreenSignUpThree(tvAcademic.getText().toString());
+        getAppPreferenceHelper().setUserScreenSignUpThree(getString(R.string.academics));
         startActivity(new Intent(this,SignupScreenFour.class));
     }
-    @OnClick(R.id.tvHobby)
+    /*The below method is for select the user's Hobby area */
+
+    @OnClick(R.id.rlHobby)
     public void onHobbyClick() {
-        getAppPreferenceHelper().setUserScreenSignUpThree(tvHobby.getText().toString());
+        getAppPreferenceHelper().setUserScreenSignUpThree(getString(R.string.hobby));
         startActivity(new Intent(this,SignUpScreenFourForHobby.class));
     }
+    /*The below function is for Same font to the whole Activity*/
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));

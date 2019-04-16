@@ -2,11 +2,14 @@ package com.wizy.testapp.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wizy.testapp.R;
@@ -20,6 +23,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SignupScreenFive extends BaseActivity {
 
+    /*Referencing the widgets through the bind view API*/
+    /*Start*/
     @BindView(R.id.LLScience)
     LinearLayout LLScience;
 
@@ -55,7 +60,8 @@ public class SignupScreenFive extends BaseActivity {
 
     @BindView(R.id.ivComputerScience)
     ImageView ivComputerScience;
-
+    /*end*/
+    /*Declaration of Variables*/
     private ArrayList<String> stringArrayList;
     private StringBuilder stringBuilder;
 
@@ -64,9 +70,10 @@ public class SignupScreenFive extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_screenfive);
         ButterKnife.bind(this);
+        /*Initialization*/
         stringArrayList = new ArrayList<>();
     }
-
+    /*The below method is for to validate the user to select the subjects or subject*/
     @OnClick(R.id.btnNext)
     public void onNextClick() {
         stringBuilder = new StringBuilder();
@@ -80,7 +87,13 @@ public class SignupScreenFive extends BaseActivity {
         }
 
         if (stringBuilder.length() == 0) {
-            Toast.makeText(this, R.string.choose_subjects, Toast.LENGTH_SHORT).show();
+            Snackbar snackbar;
+            snackbar = Snackbar.make((findViewById(android.R.id.content)), getString(R.string.choose_subjects), Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView textView = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+            view.setBackgroundColor(Color.parseColor("#ba0505"));
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
             return;
         }
         getAppPreferenceHelper().setScreenFive(stringBuilder.toString());
@@ -89,7 +102,7 @@ public class SignupScreenFive extends BaseActivity {
 
         startActivity(intent);
     }
-
+    /*The below method is for select the subject Science*/
     @OnClick(R.id.LLScience)
     public void onScienceClick() {
         if (!ivScience.isShown()) {
@@ -102,7 +115,7 @@ public class SignupScreenFive extends BaseActivity {
             ivScience.setVisibility(View.GONE);
         }
     }
-
+    /*The below method is for select the subject English*/
     @OnClick(R.id.LLEnglish)
     public void onEnglishClick() {
         if (!ivEnglish.isShown()) {
@@ -115,7 +128,7 @@ public class SignupScreenFive extends BaseActivity {
             ivEnglish.setVisibility(View.GONE);
         }
     }
-
+    /*The below method is for select the subject Math*/
     @OnClick(R.id.LLMaths)
     public void onMathsClick() {
         if (!ivMaths.isShown()) {
@@ -129,6 +142,7 @@ public class SignupScreenFive extends BaseActivity {
         }
     }
 
+    /*The below method is for select the subject SocailStudies*/
     @OnClick(R.id.LLSocialStudies)
     public void onSocialClick() {
         if (!ivSocialStudies.isShown()) {
@@ -141,7 +155,7 @@ public class SignupScreenFive extends BaseActivity {
             ivSocialStudies.setVisibility(View.GONE);
         }
     }
-
+    /*The below method is for select the subject Lanuages*/
     @OnClick(R.id.LLLanguages)
     public void onLanguagesClick() {
         if (!ivLanguages.isShown()) {
@@ -154,7 +168,7 @@ public class SignupScreenFive extends BaseActivity {
             ivLanguages.setVisibility(View.GONE);
         }
     }
-
+    /*The below method is for select the subject Computer Science*/
     @OnClick(R.id.LLComputerScience)
     public void onComputerClick() {
         if (!ivComputerScience.isShown()) {
@@ -168,6 +182,8 @@ public class SignupScreenFive extends BaseActivity {
         }
 
     }
+    /*The below function is for Same font to the whole Activity*/
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
